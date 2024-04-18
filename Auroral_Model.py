@@ -97,35 +97,6 @@ generate_daily_flux_plots(dt2s,dt2e)
 # fig2.savefig(full_path)
 # plt.close(fig2)
 
-# def generate_average_flux_plot(start_datetime, end_datetime, fig_directory, atype='diff', jtype='energy'):
-#     duration = end_datetime - start_datetime
-#     total_hours = int(duration.total_seconds() / 3600)  #sec to hours
-
-#     all_fluxes = []
-
-#     for hour in range(total_hours + 1):
-#         current_dt = start_datetime + datetime.timedelta(hours=hour)
-#         _, grid_mlats, grid_mlts, gridflux = draw_weighted_flux(current_dt, atype, jtype)
-#         all_fluxes.append(gridflux)
-
-#     all_fluxes = np.array(all_fluxes)
-#     mean_flux = np.mean(all_fluxes, axis=0)
-
-#     fig, ax = plt.subplots()
-#     c = ax.pcolormesh(grid_mlts, grid_mlats, mean_flux, shading='auto', cmap='viridis')
-#     fig.colorbar(c, ax=ax)
-#     ax.set_title(f"Average Auroral Flux from {start_datetime.strftime('%Y-%m-%d %H:%M')} to {end_datetime.strftime('%Y-%m-%d %H:%M')}")
-#     ax.set_xlabel('Magnetic Local Time (MLT)')
-#     ax.set_ylabel('Magnetic Latitude')
-
-#     filename = f"average_flux_{start_datetime.strftime('%Y%m%d_%H%M%S')}_to_{end_datetime.strftime('%Y%m%d_%H%M%S')}.png"
-#     full_path = os.path.join(fig_directory, filename)
-#     fig.savefig(full_path)
-#     plt.close(fig)
-#     print(f"Saved: {full_path}")
-
-# generate_average_flux_plot(dt1s, dt1e, fig_directory)
-
 
 ## Generating just one plot at the starting time 19:37:23 for obs 4202470103
 
